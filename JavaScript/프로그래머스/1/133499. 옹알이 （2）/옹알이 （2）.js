@@ -5,9 +5,9 @@ function solution(babbling) {
     for(let bob of babbling) {
         for(let can of cans) {
             if(bob.includes(can.repeat(2))) break;
-            bob = bob.split(can).join(",");
+            bob = bob.split(can).join(" ");
         }
-        if(bob.split(",").join("").length === 0) answer += 1;
+        if(bob.split(" ").join("").length === 0) answer += 1;
     }
     
     return answer;
