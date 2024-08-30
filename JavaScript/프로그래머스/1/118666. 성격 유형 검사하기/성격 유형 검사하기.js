@@ -7,4 +7,4 @@ function solution(survey, choices) {
         else if(choices[i] > 4)  kkti[agree] += choices[i] - 4;
     }
     return types.map(([a, b]) => kkti[b] > kkti[a] ? b : a).join("");
-}
+} 
