@@ -3,12 +3,9 @@ function solution(n, left, right) {
     let lrow = Math.floor(left / n) + 1;
 
     let lcol = left % n + 1;
-    while(right >= left) {
-        if(lcol > lrow) answer.push(lcol);
-        else answer.push(lrow);
-
+    for(let i = left; i <= right; i++) {
+        answer.push(Math.max(lrow, lcol));
         lcol++;
-        right--;
         if(lcol > n) {
             lcol = 1;
             lrow++;
