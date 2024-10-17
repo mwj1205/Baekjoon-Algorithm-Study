@@ -1,7 +1,7 @@
 function solution(number, k) {
     const stack = [];
-    let numidx = 0;
     let countK = 0;
+    
     for(const num of number) {
         while (countK < k && stack.length > 0 && stack[stack.length-1] < num ) {
             stack.pop();
@@ -10,8 +10,9 @@ function solution(number, k) {
         stack.push(num);
     }
     
-    for(let i = countK; i < k; i++) {
+    while(countK < k) {
         stack.pop();
+        countK++;
     }
     
     return stack.join('');
