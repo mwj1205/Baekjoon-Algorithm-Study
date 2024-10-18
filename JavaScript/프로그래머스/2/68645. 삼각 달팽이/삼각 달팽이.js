@@ -1,8 +1,5 @@
 function solution(n) {
-    const triangle = [];
-    for (let i = 1; i <= n; i++) {
-        triangle.push(Array(i).fill(0));
-    }
+    const triangle = Array.from({ length: n }, (_, i) => Array(i + 1).fill(0));
     
     let num = 0;
     let x = -1, y = 0;
@@ -19,11 +16,5 @@ function solution(n) {
             triangle[x][y] = ++num;
         }
     }
-    
-    const answer = [];
-    for (let i = 0; i < n; i++) {
-        answer.push(...triangle[i])
-    }
-    
-    return answer;
+    return triangle.flat();
 }
