@@ -28,9 +28,9 @@ for (let i = 1; i <= N; i++) {
 const output = [];
 
 for (const [x1, y1, x2, y2] of queries) {
-  const sum = prefix[x2][y2] // 전체 사각형 합
-            - prefix[x1 - 1][y2] // 위쪽 영역 제거
-            - prefix[x2][y1 - 1] // 왼쪽 영역 제거
+  const sum = prefix[x2][y2]          // 전체 사각형 합
+            - prefix[x1 - 1][y2]      // 위쪽 영역 제거
+            - prefix[x2][y1 - 1]      // 왼쪽 영역 제거
             + prefix[x1 - 1][y1 - 1]; // 두번 뺀 겹치는 영역 더하기
   output.push(sum);
 }
